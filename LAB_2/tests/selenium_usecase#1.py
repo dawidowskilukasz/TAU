@@ -1,10 +1,16 @@
 from selenium import webdriver
 
-driver1 = webdriver.Firefox()
-driver2 = webdriver.Chrome()
 
-driver1.get("https://demoqa.com/automation-practice-form")
-driver2.get("https://demoqa.com/automation-practice-form")
+def test(driver):
+    driver.get("https://demoqa.com/automation-practice-form")
 
-driver1.quit()
-driver2.quit()
+    driver.quit()
+
+
+driver_firefox = webdriver.Firefox()
+
+test(driver_firefox)
+
+driver_chrome = webdriver.Chrome()
+
+test(driver_chrome)

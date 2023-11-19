@@ -1,10 +1,16 @@
 from selenium import webdriver
 
-driver1 = webdriver.Firefox()
-driver2 = webdriver.Chrome()
 
-driver1.get("https://www.saucedemo.com/")
-driver2.get("https://www.saucedemo.com/")
+def test(driver):
+    driver.get("https://www.saucedemo.com/")
 
-driver1.quit()
-driver2.quit()
+    driver.quit()
+
+
+driver_firefox = webdriver.Firefox()
+
+test(driver_firefox)
+
+driver_chrome = webdriver.Chrome()
+
+test(driver_chrome)
