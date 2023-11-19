@@ -1,6 +1,6 @@
 # Selenium tests - Use Cases
 
-Testes going to be preformed in https://demoqa.com/ and https://www.saucedemo.com/
+Tests going to be preformed in https://demoqa.com/ and https://www.saucedemo.com/
 
 **Use Case #1** - Testing form fields and submitting
 
