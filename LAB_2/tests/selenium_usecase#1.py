@@ -1,4 +1,5 @@
 from selenium import webdriver
+import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
@@ -48,6 +49,9 @@ def test(driver):
     user_address.send_keys("somewhere 15/58")
     user_subject.send_keys(Keys.ENTER)
 
+    time.sleep(2)
+
+    driver.close()
     driver.quit()
 
 
