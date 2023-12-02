@@ -41,8 +41,6 @@ def test(driver):
     user_hobbies = driver.find_element(By.XPATH, "/html/body/div[2]/div/div/div[2]/div[2]/div[2]/form/div[7]/div[2]/div[2]")
     user_hobbies.click()
 
-    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-
     user_address = driver.find_element(By.ID, "currentAddress")
     user_address.send_keys("somewhere 15/58")
     user_subject.send_keys(Keys.ENTER)
