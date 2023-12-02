@@ -4,7 +4,6 @@ from selenium.webdriver.common.keys import Keys
 
 
 def test(driver):
-    driver.maximize_window()
     driver.get("https://demoqa.com/automation-practice-form")
 
     user_first_name = driver.find_element(By.ID, "firstName")
@@ -26,11 +25,14 @@ def test(driver):
     user_birthdate.click()
     user_birthdate_date = driver.find_element(By.CLASS_NAME, "react-datepicker__month-select")
     user_birthdate_date.click()
-    user_birthdate_year = driver.find_element(By.XPATH, "/html/body/div[2]/div/div/div[2]/div[2]/div[2]/form/div[5]/div[2]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[2]/select/option[112]")
+    user_birthdate_year = driver.find_element(By.XPATH,
+                                              "/html/body/div[2]/div/div/div[2]/div[2]/div[2]/form/div[5]/div[2]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[2]/select/option[112]")
     user_birthdate_year.click()
-    user_birthdate_month = driver.find_element(By.XPATH, "/html/body/div[2]/div/div/div[2]/div[2]/div[2]/form/div[5]/div[2]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[1]/select/option[8]")
+    user_birthdate_month = driver.find_element(By.XPATH,
+                                               "/html/body/div[2]/div/div/div[2]/div[2]/div[2]/form/div[5]/div[2]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[1]/select/option[8]")
     user_birthdate_month.click()
-    user_birthdate_day = driver.find_element(By.XPATH, "/html/body/div[2]/div/div/div[2]/div[2]/div[2]/form/div[5]/div[2]/div[2]/div[2]/div/div/div[2]/div[2]/div[3]/div[5]")
+    user_birthdate_day = driver.find_element(By.XPATH,
+                                             "/html/body/div[2]/div/div/div[2]/div[2]/div[2]/form/div[5]/div[2]/div[2]/div[2]/div/div/div[2]/div[2]/div[3]/div[5]")
     user_birthdate_day.click()
 
     user_subject = driver.find_element(By.ID, "subjectsInput")
@@ -38,7 +40,8 @@ def test(driver):
     user_subject.click()
     user_subject.send_keys(Keys.ENTER)
 
-    user_hobbies = driver.find_element(By.XPATH, "/html/body/div[2]/div/div/div[2]/div[2]/div[2]/form/div[7]/div[2]/div[2]")
+    user_hobbies = driver.find_element(By.XPATH,
+                                       "/html/body/div[2]/div/div/div[2]/div[2]/div[2]/form/div[7]/div[2]/div[2]")
     user_hobbies.click()
 
     user_address = driver.find_element(By.ID, "currentAddress")
