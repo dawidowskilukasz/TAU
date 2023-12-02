@@ -79,13 +79,11 @@ def test(driver):
     logger.info("Closed browser")
 
 
-# Set up and run the test for Firefox
 logger.info("Running the test for Firefox")
 driver_firefox = webdriver.Firefox()
 
 test(driver_firefox)
 
-# Set up and run the test for Chrome
 logger.info("Running the test for Chrome")
 driver_chrome = webdriver.Chrome()
 
