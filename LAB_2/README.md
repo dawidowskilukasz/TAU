@@ -5,8 +5,8 @@ Tests going to be preformed in https://demoqa.com/ and https://www.saucedemo.com
 **Use Case #1** - Testing form fields and submitting
 
 I want to submit a form my name is **john smith** my email is **john.smith@domain.com** my gender is a **secret** my
-mobile phone is **1234567891** i was born in **18.08.2011**. I'm going to study **IT** i really like **reading** my
-current address is **somewhere 15/58 NCR, Delhi**
+mobile phone is **1234567891** i was born in **18.08.2011**. I'm going to study **Computer Science** i really like **reading** my
+current address is **somewhere 15/58**
 
 **Use Case #2** - Loging to a store to buy backpack
 
