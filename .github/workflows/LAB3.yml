@@ -21,4 +21,4 @@ jobs:
       - name: Test with pytest
         run: |
           pip install pytest
-          pytest LAB_3/test/basic_game_test.py -s
+          pytest LAB_3/tests/basic_game_test.py -s
