@@ -58,6 +58,7 @@ class MazeGame:
         while True:
             if self.current_position == self.end:
                 print("\nCongratulations! You successfully completed the maze!\n")
+                print("\nYou are amazing\n")
                 break
             direction = input("Which direction would you like to go? ")
             if direction.lower() == 'q':
