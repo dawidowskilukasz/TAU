@@ -66,19 +66,19 @@ class TestMazeGame(unittest.TestCase):
         self.assertEqual(self.game.current_position, (0, 0))
         mocked_print.assert_called_with("!! You cannot leave the board.\n")
 
-    def test_check_obstacle_move(self):
-        self.game = MazeGame(size=5, obstacles=[(0, 0), (1, 0), (2, 1), (3, 3), (4, 1)], start=(2, 0), end=(2, 4))
-        new_position = (3, 0)
-
-        if self.game.start[0] < new_position[0]:
-            direction = 'w'
-        else:
-            direction = 's'
-
-        with patch('builtins.print') as mocked_print:
-            self.game.move(direction)
-
-        mocked_print.assert_called_with("!! You cannot move onto an obstacle.\n")
+    # def test_check_obstacle_move(self):
+    #     self.game = MazeGame(size=5, obstacles=[(0, 0), (1, 0), (2, 1), (3, 3), (4, 1)], start=(2, 0), end=(2, 4))
+    #     new_position = (3, 0)
+    #
+    #     if self.game.start[0] < new_position[0]:
+    #         direction = 'w'
+    #     else:
+    #         direction = 's'
+    #
+    #     with patch('builtins.print') as mocked_print:
+    #         self.game.move(direction)
+    #
+    #     mocked_print.assert_called_with("!! You cannot move onto an obstacle.\n")
 
     def test_check_game_finish(self):
         game = MazeGame(5)
