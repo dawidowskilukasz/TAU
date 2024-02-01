@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edytuj rezerwację</title>
+        <style>
+        body {
+            text-align: center;
+            padding: 50px;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Edytuj rezerwację</h1>
+
+    <form method="POST" action="{{ url_for('edit_reservation', reservation_id=reservation.id) }}">
+        {{ form.hidden_tag() }}
+
+        <div>
+            {{ form.date.label }} {{ form.date(size=20) }}
+        </div>
+        <div>
+            {{ form.start_time.label }} {{ form.start_time(size=20) }}
+        </div>
+        <div>
+            {{ form.end_time.label }} {{ form.end_time(size=20) }}
+        </div>
+
+        <div>
+            <input type="submit" value="Zapisz zmiany">
+        </div>
+    </form>
+
+    <a href="{{ url_for('reserved') }}">Powrót do moich rezerwacji</a>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rejestracja</title>
+        <style>
+        body {
+            text-align: center;
+            padding: 50px;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+    </style>
+            {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="flashes">
+          {% for message in messages %}
+            <div class="flash-message">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+</head>
+<body>
+    <h1>Rejestracja</h1>
+
+
+
+    <form method="POST" action="{{ url_for('register') }}">
+        {{ form.csrf_token }}
+        {{ form.email.label }}<br>
+        {{ form.email }}<br>
+        {{ form.password.label }}<br>
+        {{ form.password }}<br>
+        {{ form.confirm_password.label }}<br>
+        {{ form.confirm_password }}<br>
+        {{ form.submit }}
+    </form>
+    <p>Masz już konto? <a href="{{ url_for('login') }}">Zaloguj się tutaj</a>.</p>
+
+    <!-- Wyświetlanie komunikatów flash -->
+    <script>
+        setTimeout(function() {
+            var flashes = document.getElementsByClassName('flashes')[0];
+            if (flashes) {
+                flashes.style.display = 'none';
+            }
+        }, 3000);
+    </script>
+</body>
+</html>

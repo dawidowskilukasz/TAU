@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Panel użytkownika</title>
+    <style>
+        body {
+            text-align: center;
+            padding: 50px;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+    </style>
+        {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="flashes">
+          {% for message in messages %}
+            <div class="flash-message">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+</head>
+<body>
+    <a href="{{ url_for('reserved') }}">Moje rezerwacje</a>
+
+
+
+    <a href="{{ url_for('logout') }}" class="btn btn-danger">Wyloguj się</a>
+    <p>Wybierz miejsce i zarezerwuj termin:</p>
+    <ul>
+        {% for place in places %}
+        <li>
+            <form method="POST" action="{{ url_for('make_reservation', place=place) }}">
+                {{ form.csrf_token }}
+                <span>{{ place }}</span>
+                <input type="date" name="date" required>
+                <input type="time" name="start_time" required>
+                <input type="time" name="end_time" required>
+                <button type="submit">Zarezerwuj</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+
+
+    <!-- Wyświetlanie komunikatów flash -->
+    <script>
+        setTimeout(function() {
+            var flashes = document.getElementsByClassName('flashes')[0];
+            if (flashes) {
+                flashes.style.display = 'none';
+            }
+        }, 3000);
+    </script>
+</body>
+</html>

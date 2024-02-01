@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Strona nie istnieje</title>
+    <style>
+        body {
+            text-align: center;
+            padding: 50px;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Strona nie istnieje</h1>
+    <p>Przepraszamy, ale podana strona nie istnieje.</p>
+    <p><a href="{{ url_for('index') }}">Powrót do strony głównej</a></p>
+
+    {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div class="flashes">
+      {% for message in messages %}
+        <div class="flash-message">{{ message }}</div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+    <!-- Wyświetlanie komunikatów flash -->
+    <script>
+        setTimeout(function() {
+            var flashes = document.getElementsByClassName('flashes')[0];
+            if (flashes) {
+                flashes.style.display = 'none';
+            }
+        }, 3000);
+    </script>
+</body>
+</html>
